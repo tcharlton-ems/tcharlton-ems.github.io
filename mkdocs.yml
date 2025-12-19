@@ -1,0 +1,13 @@
+
+site_name: AOM EMS Protocols (Internal)
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.instant
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+plugins:
+  - search
