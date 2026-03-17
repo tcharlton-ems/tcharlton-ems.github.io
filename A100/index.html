@@ -1,0 +1,3718 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../A101/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>A100 - AOM EMS Protocols</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a100-administrative-protocol" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AOM EMS Protocols" class="md-header__button md-logo" aria-label="AOM EMS Protocols" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AOM EMS Protocols
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A100
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AOM EMS Protocols" class="md-nav__button md-logo" aria-label="AOM EMS Protocols" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AOM EMS Protocols
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A100
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A100
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a100-administrative-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A100: Administrative Protocol
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EMT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALL
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A101
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A104
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A105
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Do Not Resuscitate Orders in the Field
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A108/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use of EMS for Emergent Interfacility Transfer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A109/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Emergency Medical Technician (AEMT)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A110/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Highly Infectious Disease Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A111/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hospital Status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A113/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition of a Patient
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A114/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A114: Protocol Formatting Guide 36
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A115/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KY - Use of Lights and Sirens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A116/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KY - Bloodborne / Airborne Pathogens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C300/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C300
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C301
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C302
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C303
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C304
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C305
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C306
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C307
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M400: Acute Coronary Syndrome 88
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M401
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M402
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M403
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M404
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M405
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M406
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M407/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M407
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M408/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restraint Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M409/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M409
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M410/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M410
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M411/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M411
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M412/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M412
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M413/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M413
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M414/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M414
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M415/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M415
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M416/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M416
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M417/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M417
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M418/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M418
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M419/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M419
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M420/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M420
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M421/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M421
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M422/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M422
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O800/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O800
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O801/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O801
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O802/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O802
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O803/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O803
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O804/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O804
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P600/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P600
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P601/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P601
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P602/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P602
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P603/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P603
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P604/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P604
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P605/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P605
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P606/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P606
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P607/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P607
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P608/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P608
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P609/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P609
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P610/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P610
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P611/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P611
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P612/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P612
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P613/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P613
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P614/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P614
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P615/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P615
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P616/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P616
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P617/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P617
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P618/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P618
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S500/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S500
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S501/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S501
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S502/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S502
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S503/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S503
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S504/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S504
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S505/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S505
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S506/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S506
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S507/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S507
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S508/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S508
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S509/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S509
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB200
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB201
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB202
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB203
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB204
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB205
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB206
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB207/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB207
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB208/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB208
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB209/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB209
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB211/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB211
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB212/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB212
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T700/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T700
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T701/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T701
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T703/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T703
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T704/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T704
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T705/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T705
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T706/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T706
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T708/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T708
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T709/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T709
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T710/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T710
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T711/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T711
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T712/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T712
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T713/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T713
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T714/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T714
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T715/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T715
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a100-administrative-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A100: Administrative Protocol
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EMT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ALL
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>A100</h1>
+
+<h2 id="a100-administrative-protocol">A100: Administrative Protocol</h2>
+<h2 id="all">ALL</h2>
+<p>I. Introduction
+A. In consideration of the agreement by the undersigned emergency medical services to abide by the provisions of these administrative protocols and procedures, the Academy of Medicine (AOM) authorizes and permits the undersigned emergency medical services to operate under the auspices of the AOM and to utilize the AOM's Protocols and Standing Orders for Paramedic Services.</p>
+<p>B. These administrative protocols and procedures are the result of a cooperative effort among the members of the Academy of Medicine, Hamilton County Fire Chiefs' Association, and others. It is intended those cooperative efforts between the Academy and the Hamilton County Fire Chiefs' Association shall continue and that such cooperative efforts shall underscore any interpretations of these administrative protocols and procedures. The most recent protocols as found on the AOM website will be readily available to the paramedics at their base station(s) and in their life squads.</p>
+<p>C. It is recognized by the parties here to that several committees and organizations are involved in the provision of emergency medical services provided under the auspices of the AOM. These include:</p>
+<ol>
+<li>The Academy of Medicine of Cincinnati:</li>
+</ol>
+<p>a. The Academy of Medicine of Cincinnati will serve as the official body for establishing medical policy for emergency medical services operating in and around Hamilton County, OH, pursuant to Ohio Revised Code. The Protocols and Standing Orders for Paramedic Services issued by the Academy of Medicine constitutes the community standard for the provision of pre-hospital medical care. The Academy of Medicine will communicate all medical policy to the Hamilton County Fire Chiefs' Association, to Departments or agencies providing emergency medical services under the auspices of the Academy of Medicine, and to individual paramedics through the various committees and subcommittees organized under the auspices of the Academy of Medicine. The Academy of Medicine will also mediate conflicts arising within the emergency medical service through the grievance procedures set forth in the administrative protocols.</p>
+<ol>
+<li>Emergency and Disaster Services Committee (EDS):</li>
+</ol>
+<p>a. The EDS Committee will be comprised of physicians and other persons with interest and/or expertise in emergency services and/or disaster services appointed by the president of the Academy. The EDS Committee will consist of the following members:</p>
+<p>i. Chair of the EDS Committee</p>
+<p>ii. Chair of the Compliance Committee</p>
+<p>iii. Chair of the Protocol Committee</p>
+<p>iv. Disaster Services Expert</p>
+<p>v. A representative appointed by the Hamilton County Fire Chiefs Association</p>
+<p>vi. At large members</p>
+<p>b. There will always be an odd number of appointed members since this is a voting committee that reports to the Academy of Medicine Executive Board.</p>
+<p>c. Other members will be considered on a case-by-case basis. The chair of the EDS Committee will be a member of the Academy of Medicine appointed by the president of the Academy. This committee will advise the Council of the Academy about issues pertaining to emergency medical services. The Disaster Services member of this committee should be well versed in the regional disaster preparedness for the region and will be designated to coordinate regional disaster planning.</p>
+<p>d. The EDS Committee meeting will be considered an Open meeting but reserves the right to close the meeting to all non-members if a sensitive topic must be discussed.</p>
+<p>e. All protocol changes will be approved by the EDS Committee.</p>
+<p>f. The EDS committee will vote on all recommendations of the Compliance Committee regarding accreditation of member departments.</p>
+<ol>
+<li>Pre-Hospital Care Operations Committee (PHCOC):</li>
+</ol>
+<p>The PHCOC will be an Open ad hoc committee of the Academy of Medicine. The membership will include emergency physicians, emergency nurses, paramedics and EMT's, each hospital and squad represented equally. Members of the committee shall be appointed by the president of the Academy. The SWOPHCOC will report to and receive guidance from the EDS Committee.</p>
+<ol>
+<li>The Compliance and Inspection Subcommittee of the Pre-Hospital Care Operations Committee (C/I):</li>
+</ol>
+<p>a. The Compliance and Inspection Subcommittee of the PHCOC will be composed of members appointed by the president of the Academy and will may include at least one member from each of the following categories:</p>
+<p>i. Emergency Physician</p>
+<p>ii. Emergency Nurse</p>
+<p>iii. EMT-P</p>
+<p>iv. EMT-B</p>
+<p>v. Representative from Hamilton County EMS Committee of the Hamilton County Fire Chief’s Association</p>
+<p>b. The Compliance Subcommittee will be chaired by a member appointed by the EDS Committee chair. The function of the subcommittee will be to perform original site visits and repeat site visits as determined by the administrative protocols and to investigate complaints about pre-hospital care in accordance with these administrative protocols. The Compliance Committee shall report on all matters to the EDS Committee.</p>
+<ol>
+<li>Protocol Committee:</li>
+</ol>
+<p>a. The Protocol committee shall meet throughout the year to plan any changes to the upcoming years protocol.</p>
+<p>b. The Protocol should set a meeting schedule at the beginning of each year with consistent dates so the meeting can be attended by any person interested in contributing to protocol development.</p>
+<p>c. This is considered an open meeting.</p>
+<ol>
+<li>
+<p>Hamilton County Fire Chiefs' Association: The Hamilton County Fire Chiefs' Association, consisting of major providers for the delivery of emergency medical care by the fire service within Hamilton County, will operate their services under the community standards set forth in the administrative and medical protocols and standing orders issued by the Academy of Medicine.</p>
+</li>
+<li>
+<p>Other County Fire Chiefs Associations: Other County Fire Chiefs Associations may adopt the Academy of Medicine Protocols and Procedures Pre-Hospital Care upon the review and approval of the EDS Committee.</p>
+</li>
+</ol>
+<p>D. Each Emergency Medical Service, which is a signatory, to this agreement, agrees to comply with the following administrative protocols, compliance procedures, and grievance procedures.</p>
+<p>E. Medical Director</p>
+<ol>
+<li>
+<p>Each emergency medical service shall have a Medical Director who shall be a licensed physician in the state of the agency.</p>
+</li>
+<li>
+<p>The Academy recommends that the Medical Director have a written agreement with the governing body of the EMS to define the role of the Medical Director and the Medical Director’s relationship to that department.</p>
+</li>
+<li>
+<p>If a Medical Director leaves a department for any reason, it is expected that a replacement will be found within 90 days. The Ohio State Board of Pharmacy requires an updated “responsible person” on the drug license within 30 days or less.</p>
+</li>
+<li>
+<p>Duties of Medical Director:</p>
+</li>
+</ol>
+<p>a. Assures the adequate training and continuing education of paramedics.</p>
+<p>b. Assures the Academy of Medicine Protocols are followed in the management of all patients cared for by the EMS Personnel.</p>
+<p>c. Assists in the development of medically related dispatch procedures and transportation policies.</p>
+<p>d. Assists EMS adminis</p>
+<p>e. Assists the administrative head in establishing criteria for patient disposition.</p>
+<p>f. Assists the administrative head in developing and implementing a quality assurance program, including systematic audits, to include how problems are identified and corrected. The quality assurance program should include a review of run reports. Such a report could include:</p>
+<p>i. runs involving deaths.</p>
+<p>ii. cardiac arrests.</p>
+<p>iii. intubations and rescue airway device use.</p>
+<p>iv. questioned runs or misadventures.</p>
+<p>v. return runs within 24 hours same patient.</p>
+<p>vi. reasonable sampling of non-transport runs</p>
+<p>vii. runs involving complaints.</p>
+<p>viii. runs involving DNRs.</p>
+<p>ix. a random sampling of 10% of the runs each month.</p>
+<p>x. runs involving exposures of EMS personnel.</p>
+<p>g. The Medical Director shall possess a thorough knowledge of pre-hospital emergency care, emergency medical systems, and emergency medicine. It is recommended that the Medical Director be certified in ACLS and ATLS or Board Certified in Emergency Medicine.</p>
+<p><strong>II. Voice Communication Ability</strong></p>
+<p>A. Each unit used to transport patients shall be equipped with communication equipment capable of voice transmission and compatible with Academy of Medicine approved medical control base stations.</p>
+<p><strong>III. Treatment Protocols</strong></p>
+<p>A. The Department shall utilize these Treatment Protocols of the Academy of Medicine of Cincinnati.</p>
+<p>B. Minor alterations to the protocols may be made by the Medical Director. These changes or additions become the sole responsibility of the Medical Director. The Academy of Medicine EDS Committee shall review all such changes.</p>
+<p>C. Any additions or modification should be made in the same format as these protocols for consistency.</p>
+<p>D. Any additions should be copied to the EDS Committee of the Academy of Medicine.</p>
+<p><strong>IV. Run Report and Record Keeping System</strong></p>
+<p>A. The Department shall utilize a run report that collects the following information about patient encounters:</p>
+<ol>
+<li>
+<p>Patient demographic data.</p>
+</li>
+<li>
+<p>EMS vehicle information.</p>
+</li>
+<li>
+<p>Incident location.</p>
+</li>
+<li>
+<p>Patient chief complaint.</p>
+</li>
+<li>
+<p>Patient condition and mechanism of injury.</p>
+</li>
+<li>
+<p>Patient treatment.</p>
+</li>
+<li>
+<p>Record of base station contact, when used.</p>
+</li>
+<li>
+<p>Patient condition on arrival at the receiving facility.</p>
+</li>
+<li>
+<p>Receiving facility.</p>
+</li>
+</ol>
+<p>B. A copy of the run report shall be left at the hospital at the time of patient delivery to facilitate transfer of care.</p>
+<p>C. An appropriate filing system, with a manual or computerized method to track patient, capable of access for review by the Department Medical Director, shall be in place.</p>
+<p>D. The Department shall have a process that tracks critical patient care procedures performed by each employee.</p>
+<p><strong>V. System Audits</strong></p>
+<p>A. Training and Continuing Education Monitoring/Record-Keeping</p>
+<ol>
+<li>
+<p>A system of verification of employee’s certification and monitoring of his/her training and continuing education efforts shall be established and maintained either manually or by computer.</p>
+</li>
+<li>
+<p>EMS personnel employed by an emergency medical service to provide EMS services under the auspices of the Academy of Medicine shall be certified by their relevant state and shall meet all continuing education requirements.</p>
+</li>
+<li>
+<p>The Academy of Medicine may request additional training that it may deem necessary.</p>
+</li>
+<li>
+<p>A report of continuing education shall be made to the Medical Director at the time of re-certification.</p>
+</li>
+</ol>
+<p><strong>VI. Department SOP/Policies</strong></p>
+<p>A. Written department SOP and policies for the delivery of EMS must exist and be distributed to all members who provide EMS service for the department.</p>
+<p>B. Department SOP and policies shall be consistent with the Academy of Medicine protocols and procedures.</p>
+<p>C. EMS personnel shall be trained in these standard operation procedures.</p>
+<p>D. Have a protocol review procedure with EMS personnel.</p>
+<p><strong>VII. Variances</strong></p>
+<p>A. Application</p>
+<ol>
+<li>
+<p>Any emergency medical service may apply to the EDS Committee for a variance from any of the provisions of the administrative protocols.</p>
+</li>
+<li>
+<p>The application for a variance shall set forth the exceptional circumstances requiring relief from an administrative protocol giving, in detail, the reasons for the need for a variance, the duration of the variance sought, and the terms of the variance.</p>
+</li>
+</ol>
+<p>B. Decision by EDS</p>
+<ol>
+<li>
+<p>The EDS Committee shall, within 45 days of receipt of a request for a variance, conduct a hearing on the request.</p>
+</li>
+<li>
+<p>Prior notice shall be given to the EMS requesting a variance with an opportunity to be heard.</p>
+</li>
+<li>
+<p>The decision whether to grant or deny a request for a variance or to grant the variance with conditions or limitations shall be within the sole discretion of the EDS Committee.</p>
+</li>
+<li>
+<p>The EDS Committee may grant a variance with conditions including limits on the duration or terms and may impose alternative requirements.</p>
+</li>
+<li>
+<p>Communication Variance Forms shall be submitted to the Medical Director and the EDS Committee for review.</p>
+</li>
+</ol>
+<p><strong>VIII. Protocol Copies</strong></p>
+<p>A. All EMS units shall</p>
+<ol>
+<li>
+<p>Have a copy of these protocols on the unit for reference.</p>
+</li>
+<li>
+<p>Utilize the communication variance form whenever a procedure which normally requires the approval of a medical command physician has been performed without such approval.</p>
+</li>
+</ol>
+<h2 id="emt">EMT</h2>
+<p><strong>IX. EMT</strong></p>
+<p>A. Protocol</p>
+<ol>
+<li>The EMT protocol is intended to be used in its entirety but may be used in part according to the EMS Medical Director.</li>
+</ol>
+<p>B. Continuing Education</p>
+<ol>
+<li>All EMT’s are required to maintain current BLS cards. A 90-day grace period is allowed when a card expires, to be enrolled in a new course.</li>
+</ol>
+<p>C. Personnel</p>
+<ol>
+<li>Of the medical team members, both must be EMT certified.</li>
+</ol>
+<p>D. Equipment</p>
+<ol>
+<li>A BLS unit is required to carry and maintain equipment needed to comply with the EMT section of these Protocols by the Academy of Medicine of Cincinnati.</li>
+</ol>
+<h2 id="medic">Medic</h2>
+<p>A. EMS Responses</p>
+<ol>
+<li>
+<p>It is the recommendation of the Academy of Medicine of Cincinnati Emergency and Disaster Services (EDS) committee and the Protocol committee that the number of paramedics utilized per EMS detail shall be determined by parameters set by individual EMS agencies and their respective Medical Directors.</p>
+</li>
+<li>
+<p>It shall be the responsibility of the EMS Agency and their Medical Director to determine the operational staffing and paramedic response guidelines for their department relative to the number of paramedics responding to an EMS detail.</p>
+</li>
+</ol>
+<p>B. 24 Hour Paramedic Service</p>
+<ol>
+<li>
+<p>Each emergency medical service that chooses to provide paramedic services operating under the auspices of the Academy of Medicine shall provide paramedic services on a 24-hour basis.</p>
+</li>
+<li>
+<p>Each emergency medical service shall be required to show that it has sufficient certified paramedics to provide 24-hour paramedic service.</p>
+</li>
+</ol>
+<p>C. Continuing Education</p>
+<ol>
+<li>All paramedics are required to maintain current ACLS cards. A 90-day grace period is allowed when a card expires, to be enrolled in a new course.</li>
+</ol>
+<p>D. Required Drugs, IV Solutions, and Equipment for All Paramedic Services</p>
+<ol>
+<li>
+<p>Drugs, IV Solutions, and Equipment needed to comply with these Protocols by the Academy of Medicine of Cincinnati.</p>
+</li>
+<li>
+<p>Rapid Glucose monitoring capability with appropriate CLIA License.</p>
+</li>
+<li>
+<p>Documentation Regarding Compliance with Board of Pharmacy, State of Ohio, and other Licensing bodies</p>
+</li>
+<li>
+<p>If other supplies are added by an emergency medical service, they must be approved by and used under the authority of the emergency medical service's Medical Director.</p>
+</li>
+<li>
+<p>Any devices needing manufacturers recommended calibration and service shall have records of such available for review.</p>
+</li>
+</ol>
+<h2 id="all_1">ALL</h2>
+<p><strong>XI. Compliance Procedures</strong></p>
+<p>A. Site Visits</p>
+<ol>
+<li>
+<p>A site visit is an inspection of an emergency medical service conducted by a Site Visit Team, which consists of at least one physician and two paramedics (nurses well versed in emergency medical services can fulfill one of the paramedic positions). This process ensures compliance with the requirements of the Administrative Protocols, Medical Protocols and Standing Orders for Paramedic Services. The Site Visit Team will review adherence to recommended practices deemed important by the EDS Committee as essential to the functioning of a superior EMS system. The Site Visit Team will verify compliance with standards clearly stipulated and/or required by a rule governing body, such as the Ohio Revised Code, Ohio Administrative Code and/or the National Fire Protection Association. Refer to Hamilton County Fire Chiefs Website for detailed list.</p>
+</li>
+<li>
+<p>The on-site physician member of the inspection team will lead the site visit process and is responsible for completing and submitting the site visit report. No member of the inspection team shall have any potential conflict of interest with the Emergency Medical Service being inspected.</p>
+</li>
+<li>
+<p>Site visits shall be conducted at the time an emergency medical service requests the right to operate under the auspices of the Academy of Medicine and everyone to five year(s) thereafter.</p>
+</li>
+<li>
+<p>Site visit process is as follows:</p>
+</li>
+</ol>
+<p>a. The emergency medical service will be notified, by the Academy of Medicine, that a site visit is needed.</p>
+<p>b. The emergency medical service will have three months, after notification, to complete and submit (to the Academy) the Academy of Medicine EMS Site Visit Form. (Hamilton County Fire Chiefs Website)</p>
+<p>c. The Chair of the Compliance Committee, or his/her designee, will conduct a preliminary review ensuring the emergency medical service meets the items listed on the submitted site visit form.</p>
+<p>d. After review, the site visit form is forwarded to the Academy of Medicine for site visit scheduling; at this time, a Site Visit Team is established.</p>
+<p>e. The Site Visit Team will verify the information, practices and equipment as identified on the submitted site visit form.</p>
+<p>f. The site visit results will be sent to the Academy of Medicine, with a copy forwarded to the Compliance Committee Chair.</p>
+<p>B. Compliance Committee Report</p>
+<ol>
+<li>
+<p>Within 90 days of a site visit, the Compliance Committee Chair shall present its report to the EDS Committee, specifying any deficiencies discovered or setting forth its finding that the emergency medical service has successfully satisfied all the requirements of the site visit.</p>
+</li>
+<li>
+<p>The EDS Committee decision shall be delivered to the Fire Chief and the administrative head of the emergency medical service, unless otherwise designated, in writing, within 30 days of  </p>
+</li>
+</ol>
+<p>receipt: to the Medical Director of the emergency medical service and to the chair of the EDS Committee.</p>
+<ol>
+<li>The emergency medical service may respond in writing to the EDS Committee decision within 30 days of receipt of that report. The EMS response shall be delivered to the chair of the EDS Committee.</li>
+</ol>
+<p>C. EDS Hearing</p>
+<ol>
+<li>
+<p>The EDS Committee shall conduct a hearing concerning the Compliance Committee site visit report and the EMS response (if any) within 45 days.</p>
+</li>
+<li>
+<p>The EDS Committee shall give prior notice of its hearing to the EMS and the Compliance Committee.</p>
+</li>
+<li>
+<p>The Compliance Committee and the EMS shall have a right to be heard at the EDS hearing.</p>
+</li>
+<li>
+<p>The EDS may request additional information from the Compliance Committee and/or EMS.</p>
+</li>
+</ol>
+<p>D. EDS Decision</p>
+<ol>
+<li>EDS Committee shall render a decision that may provide any one or more of the following:</li>
+</ol>
+<p>a. 5-year approval</p>
+<p>b. 3-year approval</p>
+<p>c. 1-year approval</p>
+<p>d. Follow-up site visit</p>
+<p>e. Corrective action</p>
+<p>f. Probation</p>
+<p>g. Suspension</p>
+<p>h. Termination</p>
+<p>E. Promulgation of EDS Decision</p>
+<ol>
+<li>
+<p>The decision of the EDS Committee shall be provided, in writing, to the Fire Chief and the administrative head of the EMS, (unless otherwise designated in writing); and to the Medical Director of the EMS Department.</p>
+</li>
+<li>
+<p>The decision of the EDS Committee is neither confidential nor privileged.</p>
+</li>
+</ol>
+<p>a. However, to the extent that the Compliance Committee report, the EMS response, or any other documentation refers or relates to individual patient care, all matters relating to any particular patient's care shall be kept confidential.</p>
+<p>F. Right of Appeal</p>
+<ol>
+<li>
+<p>Any emergency medical service disciplined by the EDS Committee as set forth above shall have a right of appeal to the Council of the Academy of Medicine.</p>
+</li>
+<li>
+<p>There shall be no automatic stay of the decision of the EDS Committee pending appeal to the Council of the Academy of Medicine.</p>
+</li>
+<li>
+<p>Upon request, the Chair of the EDS Committee or the President of the Academy of Medicine may grant a stay pending appeal.</p>
+</li>
+</ol>
+<p><strong>XII. Grievance Procedures</strong></p>
+<p>A. Complaint</p>
+<ol>
+<li>
+<p>Any Individual or Group may file a complaint to be considered under these grievance procedures.</p>
+</li>
+<li>
+<p>Any such complaint may be made concerning deviations from the Protocols and Standing Orders for Paramedic Services, the Administrative Protocols, or any questioned conduct.</p>
+</li>
+<li>
+<p>The complaint should be filed with the EDS Committee Chair</p>
+</li>
+<li>
+<p>Once a complaint is received by the chair of the EDS Committee, notice shall be given to the Fire Chief and administrative head of the EMS, the Medical Director, and to the members of the EDS Committee.</p>
+</li>
+<li>
+<p>No complaint shall be investigated, without the written consent of all parties involved where: litigation is threatened or pending, until such litigation, including all appeals, is completed; or</p>
+</li>
+<li>
+<p>A collective bargaining or other agreement imposes inconsistent procedures or confers rights that cannot be protected under these grievance procedures.</p>
+</li>
+</ol>
+<p>B. Investigation of Complaints</p>
+<ol>
+<li>
+<p>The chair of the EDS Committee shall appoint a team to investigate the complaint. The investigators may be from the EDS Committee, the Compliance Committee, the Pre-Hospital Care Operations Committee, or any other individuals determined by the chair of the EDS Committee to be appropriate for the investigation.</p>
+</li>
+<li>
+<p>Within 45 days of its receipt of the complaint, the investigation team shall submit its report and recommendation to the chair of the EDS Committee, the administrative head of the EMS, and to the Medical Director.</p>
+</li>
+</ol>
+<p>C. Right of Response</p>
+<ol>
+<li>
+<p>The EMS shall have a right to respond to the report and recommendation of the investigation team within 30 days of receipt of its report.</p>
+</li>
+<li>
+<p>This response should be filed with the EDS Chair.</p>
+</li>
+</ol>
+<p>D. EDS Hearing</p>
+<ol>
+<li>
+<p>The EDS Committee shall conduct a hearing on the complaint, report, and recommendation of the investigation team, and EMS response.</p>
+</li>
+<li>
+<p>Prior notice shall be given to all concerned parties.</p>
+</li>
+<li>
+<p>All concerned parties shall be given an opportunity to be heard.</p>
+</li>
+<li>
+<p>The EDS Committee may request additional information.</p>
+</li>
+<li>
+<p>The EDS Committee, at the request of all concerned parties, may conduct an informal hearing or consider only written material.</p>
+</li>
+<li>
+<p>The EDS Committee may waive the hearing if requested by all concerned parties.</p>
+</li>
+</ol>
+<p>E. Decision of EDS Committee</p>
+<ol>
+<li>
+<p>Upon hearing the complaint, investigation report, and responses, the EDS Committee shall render a decision. Sanctions, if any, shall be directed to the emergency medical service(s) involved, not to any individual.</p>
+</li>
+<li>
+<p>The EDS may require corrective action(s) including, but not limited to, additional training.</p>
+</li>
+<li>
+<p>The EDS may issue a reprimand, probation, suspension, or termination of the EMS if the complaint is found to be a repeat offense; if the complaint arises from material administrative violations of the Administrative Protocols; or if the complaint involves substantial systemic problems.</p>
+</li>
+</ol>
+<p>F. Right-of-Appeal</p>
+<ol>
+<li>Any concerned person or entity may appeal the decision of the EDS Committee to the Council of the Academy of Medicine.</li>
+</ol>
+<p>G. There shall be no automatic stay of the decision of the EDS Committee pending appeal. Upon request, the Chair of the EDS Committee or the President of the Academy of Medicine may grant a stay pending appeal.</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzIyOTg1MjU5XX0=
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.instant"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

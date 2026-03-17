@@ -1,0 +1,3499 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../M410/">
+      
+      
+        <link rel="next" href="../M412/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>M411 - AOM EMS Protocols</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AOM EMS Protocols" class="md-header__button md-logo" aria-label="AOM EMS Protocols" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AOM EMS Protocols
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              M411
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AOM EMS Protocols" class="md-nav__button md-logo" aria-label="AOM EMS Protocols" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AOM EMS Protocols
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A100/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A100
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A101/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A101
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A102/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A102
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A104/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A104
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A105/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A105
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A106/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Do Not Resuscitate Orders in the Field
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A108/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use of EMS for Emergent Interfacility Transfer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A109/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Emergency Medical Technician (AEMT)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A110/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Highly Infectious Disease Transport
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A111/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hospital Status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A113/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definition of a Patient
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A114/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A114: Protocol Formatting Guide 36
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A115/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KY - Use of Lights and Sirens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A116/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KY - Bloodborne / Airborne Pathogens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C300/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C300
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C301/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C301
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C302
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C303/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C303
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C304
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C305/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C305
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C306
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C307/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C307
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M400/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M400: Acute Coronary Syndrome 88
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M401/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M401
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M402/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M402
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M403/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M403
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M404/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M404
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M405/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M405
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M406/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M406
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M407/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M407
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M408/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restraint Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M409/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M409
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M410/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M410
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M411
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M412/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M412
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M413/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M413
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M414/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M414
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M415/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M415
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M416/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M416
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M417/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M417
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M418/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M418
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M419/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M419
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M420/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M420
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M421/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M421
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../M422/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    M422
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O800/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O800
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O801/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O801
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O802/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O802
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O803/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O803
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../O804/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O804
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P600/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P600
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P601/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P601
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P602/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P602
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P603/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P603
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P604/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P604
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P605/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P605
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P606/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P606
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P607/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P607
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P608/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P608
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P609/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P609
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P610/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P610
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P611/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P611
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P612/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P612
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P613/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P613
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P614/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P614
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P615/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P615
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P616/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P616
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P617/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P617
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P618/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P618
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S500/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S500
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S501/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S501
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S502/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S502
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S503/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S503
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S504/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S504
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S505/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S505
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S506/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S506
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S507/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S507
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S508/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S508
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S509/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S509
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB200/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB200
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB201
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB202/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB202
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB203/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB203
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB204/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB204
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB205/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB205
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB206/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB206
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB207/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB207
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB208/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB208
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB209/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB209
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB211/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB211
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SB212/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SB212
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sample/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T700/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T700
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T701/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T701
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T703/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T703
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T704/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T704
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T705/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T705
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T706/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T706
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T708/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T708
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T709/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T709
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T710/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T710
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T711/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T711
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T712/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T712
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T713/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T713
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T714/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T714
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T715/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T715
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<hr />
+<hr />
+<h1 id="toxicological-emergencies">Toxicological Emergencies</h1>
+<h2 id="all">ALL</h2>
+<p><strong>I. I****NCLUSION</strong> <strong>C****RITERIA</strong></p>
+<p>A. Patients of any age.</p>
+<p>B. History of actual poisoning either through ingestion, inhalation, injection, or absorption.</p>
+<p>C. Scene size-up that indicates possible poisoning.</p>
+<p>D. Presentation may vary depending on the concentration and duration of exposure. There could be a long list of signs and symptoms. There are thousands of chemicals, drugs, plants, and animals that can cause poisoning in humans.</p>
+<p><strong>II. R****ELATED</strong> <strong>A****PPENDICES</strong></p>
+<p>A. Appendix A: Chemical Agent Exposure</p>
+<p>B. Appendix B: Transport of Contaminated Patients</p>
+<p><strong>III. PROTOCOL</strong></p>
+<p>A. First priority is scene safety.</p>
+<p>B. Evaluate scene for provider safety and take appropriate precautions.</p>
+<ol>
+<li>
+<p>Remove or have patients removed from trigger area once appropriate safety standards have been implemented.</p>
+</li>
+<li>
+<p>Park vehicles a safe distance away, uphill and upwind of incident.</p>
+</li>
+<li>
+<p>Utilize appropriate monitoring and safety equipment.</p>
+</li>
+<li>
+<p>Decontaminate patient as called for depending on agent and exposure.</p>
+</li>
+<li>
+<p>Consider requesting additional appropriate resources (HAZMAT, etc.).</p>
+</li>
+</ol>
+<p>C. Assess airway, breathing, circulation, and disability.</p>
+<p>D. Maintain airway and administer high flow oxygen as appropriate.</p>
+<p>E. Obtain vital signs, including temperature, end tidal-carbon dioxide, finger stick blood glucose, and apply cardiac monitor, if available.</p>
+<ol>
+<li>All patients with abnormal mental status should be considered hypoglycemic until proven otherwise.</li>
+</ol>
+<p>F. If patient has ingested toxins, medications or other substances obtain container(s), if available, and bring them with the patient.</p>
+<ol>
+<li>
+<p>Try to ascertain how much has been consumed, strength, formulation (immediate release IR or extended-release ER) and time of ingestion.</p>
+</li>
+<li>
+<p>Be aware of poly-pharmacy overdoses and lack of patient compliance with the intentional overdose patient.</p>
+</li>
+<li>
+<p>Be prepared for the possibility of patients who have may have multiple intoxicants on board.</p>
+</li>
+</ol>
+<p>G. If suicide notes are present, take to hospital or leave with police as appropriate.</p>
+<p>H. The mainstay of treatment is supportive care of ABCDs.</p>
+<ol>
+<li>
+<p>Treat hypotension with Push Dose Epinephrine as outlined in SB205 Hypotension/Shock.</p>
+</li>
+<li>
+<p>If patient has seizure activity reference appendices C and D. If seizure is not due to chemical agent exposure treat according to M410 or P610.</p>
+</li>
+</ol>
+<p>I. When in doubt contact Poison Control/Medical Control (<strong>National Poison Control Center: 1-800- 222-1222</strong>).</p>
+<ol>
+<li>
+<p>EMS may contact medical command or Poison Control for toxin information.</p>
+</li>
+<li>
+<p>Direct contact with EMS to poison control for treatment orders is discouraged, medical command must give treatment orders. If necessary medical command will contact Poison Control.</p>
+</li>
+</ol>
+<p>J. Because of the wide variety of possible adverse effects of assorted toxins, it is not practical to detail the management of various toxic exposures. Consultation with the medical control physician can enhance the prehospital care of patients with potentially dangerous exposures and is encouraged.</p>
+<p>K. All Toxicological Emergency Patients should be transported as soon as possible EXCEPT ref to next section L.</p>
+<ol>
+<li>
+<p>Transport via police is not appropriate in many situations.</p>
+</li>
+<li>
+<p>Reassess frequently and notify receiving facility if there are changes in patient condition or decontamination will be necessary.</p>
+</li>
+</ol>
+<p>L. If exposure is an unintentional pediatric patient who is less than 12 years old AND has stable ABCs and vital signs:</p>
+<ol>
+<li>
+<p>Obtain all history of ingestion, including time, all substances, amounts, strengths, formulations as applicable.</p>
+</li>
+<li>
+<p>Have legal guardian or parent contact the <strong>National Poison Control Center (PCC) at 1-800-222-1222</strong> for further assessment and treatment recommendations including referral to the emergency department. Once they obtain the recommendation from the poison center, allow them to make informed decision on treatment and transport.</p>
+</li>
+</ol>
+<p>• EMS provider may make contact with PCC but must relay all pertinent information from the PCC back to the legal guardian or parent for an informed decision.</p>
+<p>• Up to 90% of all unintentional pediatric exposures do not need immediate referral to the emergency department.</p>
+<h2 id="emt">EMT</h2>
+<p>M. If available, request ALS back-up for patient who has any of the following:</p>
+<ol>
+<li>
+<p>An exposure that will require ALS intervention prior to arrival at the Emergency Department.</p>
+</li>
+<li>
+<p>Is unresponsive.</p>
+</li>
+<li>
+<p>Airway compromise.</p>
+</li>
+<li>
+<p>Is an adult with a pulse rate of less than 50 or greater than 130 beats per minute, or a systolic blood pressure less than 90 or greater than 180 mmHg.</p>
+</li>
+<li>
+<p>Is a pediatric patient with a respiratory rate greater than 50 or a heart rate less than 60 or greater than 180.</p>
+</li>
+<li>
+<p>A patient with blood glucose less than 60 mg/dL.</p>
+</li>
+</ol>
+<h2 id="medic">Medic</h2>
+<p>N. Establish IV/IO access.</p>
+<h2 id="all-1">ALL</h2>
+<p>O. If toxins remain on the patient wash, brush, and remove clothing as appropriate and depending on type of toxic exposure.</p>
+<p>P. <strong>EXTERNAL EXPOSURE (SKIN AND EYE CONTACT)</strong></p>
+<ol>
+<li>
+<p>If eye exposure, flush the eyes with normal saline or clean water.</p>
+</li>
+<li>
+<p>If patient has been sprayed with pepper spray (OC spray) or tear gas Sudecon® wipes can assist in decontamination.</p>
+</li>
+<li>
+<p>Encourage patient not to rub skin or eyes as this will spread the toxin and cause increase irritation.</p>
+</li>
+</ol>
+<p>Q. <strong>INHALED POISONS</strong></p>
+<p><strong>1.</strong> Remember that many inhaled toxins can also be absorbed through the skin and that further decontamination may be necessary depending on toxic agent.</p>
+<p><strong>2.</strong> Detect and treat any life-threatening problems immediately.</p>
+<p>R. <strong>INGESTED POISONS</strong></p>
+<ol>
+<li>Be prepared to manage the airway if ingested poison is corrosive or caustic.</li>
+</ol>
+<p><strong>IV. SPECIFIC TOXINS:</strong></p>
+<p>A. CARBON MONOXIDE (SUSPICION OF)</p>
+<ol>
+<li>
+<p>Common human exposures occur through inhalation. Toxicity results in cellular hypoxia and ischemia.</p>
+</li>
+<li>
+<p>Treatment should occur when any of the following are present:</p>
+</li>
+</ol>
+<p>• CNS depression</p>
+<p>• Nausea</p>
+<p>• Vomiting</p>
+<p>• Headache</p>
+<ol start="3">
+<li>
+<p>Treatment</p>
+<ol>
+<li>
+<p>You can assess carboxyhemoglobin level (COHb) device assessment, if available. But understand some of these devices may be inaccurate.</p>
+</li>
+<li>
+<p>If carbon monoxide is suspected administer oxygen at 10-15 LPM regardless of oxygen saturation or COHb.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>B. CYANIDE (SUSPICION OF)</p>
+<ol>
+<li>
+<p>Cyanide poisoning can occur through inhalation, ingestion, and absorption.</p>
+</li>
+<li>
+<p>Treatment should occur when any of the following are present:</p>
+</li>
+</ol>
+<p>CNS depression</p>
+<p>Hypotension</p>
+<p>Tachypnea</p>
+<ol start="3">
+<li>There are no absolute contraindications to treatment.</li>
+</ol>
+<h2 id="medic-1">Medic</h2>
+<ol start="4">
+<li>If patient was exposed to fire/smoke in confined space and cyanide poisoning is suspected or known, then administer Cyanokit® if available (this is an optional drug). (There is a difference between Cyanokit® and Nithiodote®. Nithiodote should not be used. See notes)</li>
+</ol>
+<p>a. Cyanokit: Adult dose is 5 g (both 2.5 g vials or one 5 g vial) IV/IO over 15 minutes (~15 mL/minute or 7.5 minutes/vial) as per Manufacturer’s recommendations (see below).</p>
+<p>b. Cyanokit: Pediatric dose is 70 mg/kg (max 5 g) IV/IO.</p>
+<p>c. The 5 g vial must be reconstituted with 200 mLs of 0.9% NaCl using supplied sterile transfer spike. Use the transfer spike to transfer the contents of two (2) 100 mL bags of normal saline into the Cyanokit® bottle (Normal Saline is the recommended diluent)</p>
+<p>d. Once filled gently rock or invert the vial to mix until the powder goes into solution. DO NOT shake the vial.</p>
+<p>e. If solution does not turn dark red or particulate is still present after mixing dispose of solution and do not administer.</p>
+<p>f. Spike the bottle and run the solution from the bottle over 15 minutes.</p>
+<p>g. Depending on severity or clinical response a repeat dose of 5 g (adults) or 70 mg/kg, max 5 g (pediatrics) may be given. The infusion rate for this dose can range from 15 minutes to 2 hours.</p>
+<p>h. Due to potential incompatibility with drugs commonly used in resuscitation effort and drugs in the cyanide antidote kit, DO NOT administer other drugs through the line supplying the Cyanokit®.</p>
+<ol start="5">
+<li>
+<p>Treatment will temporarily turn the victim’s skin and bodily secretions (tears, urine, etc) red.</p>
+</li>
+<li>
+<p>If patient has seizure activity reference Appendices A and B.</p>
+</li>
+</ol>
+<h2 id="all-2">ALL</h2>
+<p>C. OPIATE OVERDOSE</p>
+<ol>
+<li>
+<p>Consider restraining patient before administration of Naloxone especially if patient is unconscious upon initial contact.</p>
+</li>
+<li>
+<p>If patient is able to self-maintain their airway and hemodynamically stable, treatment should be supportive.</p>
+</li>
+<li>
+<p>If patient has a pulse but is unconscious and there is suspicion of opiate overdose (evidenced by miosis, CNS depression, hypotension, hypoxia), perform basic airway maneuvers (assisted respiration with BVM and NP/ OP airway) to maintain airway and ventilation. <strong>Assisted respirations and basic airway maneuvers are the mainstay of treatment in an otherwise stable patient until the overdose can be reversed with naloxone.</strong></p>
+</li>
+</ol>
+<p>• Advanced airway management with supraglottic/extraglottic airway or intubation should be deferred until appropriate dose of naloxone can be given as long as the patient is otherwise stable.</p>
+<ol start="4">
+<li>Patients in extremis may require advanced airway management (i.e., if vomiting or not able to maintain airway with good basic maneuvers and good BVM), patients in cardiac arrest should be managed per protocol (SB204).</li>
+</ol>
+<h2 id="emt-1">EMT</h2>
+<ol start="5">
+<li>Administer naloxone.</li>
+</ol>
+<p>a. Intranasal (IN)</p>
+<ol>
+<li>
+<p>Do not use more than 1 ml of medication per nostril (0.2 to 0.3 is the ideal volume). If a higher volume is required, apply it in two separate doses allowing a few minutes between for the previous dose to absorb.</p>
+</li>
+<li>
+<p>Always deliver half the medication dose up each nostril. This doubles the available mucosal surface area (over a single nostril) for drug absorption and increases rate and amount of absorption.</p>
+</li>
+<li>
+<p>Naloxone may be administered by intranasal atomizer in the 0.4mg to 4 mg range. The IV/IM/IO dose remains the same.</p>
+</li>
+</ol>
+<p>b. Auto Injector - follow manufacturer recommendations.</p>
+<h2 id="medic-2">Medic</h2>
+<p>c. Administer Naloxone with an initial dose of 0.4 mg - 4 mg IV/IM/IN/IO (adult) or 0.1 mg/kg (max 4 mg) for pediatrics. EMT’s may administer IN naloxone (see note below).</p>
+<ol>
+<li>
+<p><em>The clinical goal of naloxone administration is improvement in the patient’s respirations, not complete resolution of their mental status</em>. Starting with a lower dose is preferred to prevent negative side effects. Example dosing sequence: 0.4 mg, then 1mg then 2 mg until respiratory status improves.</p>
+</li>
+<li>
+<p>While IV/ IO naloxone may be effective within 1-2 minutes, IM and IN may take up to 5 minutes or more for full clinical effect.</p>
+</li>
+<li>
+<p>Naloxone may be administered by intranasal atomizer in the 0.4 mg to 4 mg range for adults and pediatrics. The IV/IM/IO dose remains the same.</p>
+</li>
+<li>
+<p>In patients who are completely apneic or peri-arrest (ie. bradycardic, hypotensive), a larger first dose may be appropriate (ie. 1-2 mg IV).</p>
+</li>
+<li>
+<p>In a patient who has a pulse and whose respirations can be assisted without difficulty via BVM, the preferable route of naloxone administration initially is intranasal 2 mg (1 mg per nostril) or 4 mg using a pre-dosed atomizer. If patient condition allows, allow at least 5 minutes after IN administration before redosing.</p>
+</li>
+</ol>
+<p>d. If breathing is not improved after 3-5 minutes, administer a second dose of naloxone. Continue to repeat as necessary up to total of 10 mg.</p>
+<p>e. If no improvement after 10 mg total of naloxone has been given, consider other possible causes for patient’s symptoms.</p>
+<p>f. IV naloxone typically has onset (ie. improvement in breathing) within 1-2 minutes, while the time to onset of IN/ IM naloxone is generally 5-8 minutes. As long as the airway can be maintained with basic maneuvers and BVM, a second dose of naloxone may be delayed beyond 5 minutes if the initial dose was IM/ IN, though up to 25% of patients may need an additional dose.</p>
+<p>g. Be cautious to avoid aggressive use of Naloxone in patients with suspected opiate overdose as a rapid administration may cause acute withdrawal symptoms. The opiate may also be controlling aggressive side effects of other drugs that have been consumed.</p>
+<p>h. After naloxone administration, transport to an emergency department is recommended.</p>
+<p>i. The effective half-life of naloxone is between 45 and 90 minutes depending on the dose. The half-life of many narcotic agents is longer (2-3 hours up to 20+ hours, ie. Methadone, Fentanyl, Talwin, Oxycontin), and patients generally warrant observation to avoid rebound respiratory depression when the naloxone wears off.</p>
+<p>j. If after giving naloxone the patient refuses transportation to the hospital for observation, they must sign to leave against medical advice per protocol SB200.</p>
+<ol start="6">
+<li>If the patient is suspected of having opioid withdrawal, refer to M420 Opioid Withdrawal protocol.</li>
+</ol>
+<h2 id="all-3">ALL</h2>
+<p>D. <strong>ORGANOPHOSPHATE POISONINGS</strong></p>
+<ol>
+<li>
+<p>Refer to Hamilton County Fire Chief’s Website.</p>
+</li>
+<li>
+<p>Keep in mind tachycardia is not a contraindication for Atropine administration in the Organophosphate poisoning patient.</p>
+</li>
+</ol>
+<p>E. <strong>SODIUM CHANNEL BLOCKERS OVERDOSE</strong></p>
+<ol>
+<li>
+<p>Benadryl (diphenhydramine).</p>
+</li>
+<li>
+<p>Tricyclic antidepressants are used to treat patients with major depressive disorders and bipolar disorder. Tricyclic drugs may be found under the following names:</p>
+</li>
+</ol>
+<p>• Amitriptyline (Elavil, Endep, Etrafon, Limbitrol)</p>
+<p>• Nortriptyline (Palelor, Aventyl)</p>
+<p>• Amoxapine (Asendin)</p>
+<p>• Clomipramine (Anafranil)</p>
+<p>• Desipramine (Norpramine</p>
+<p>• Doxepin (Sinequan)</p>
+<p>• Imipramine (Tofranil)</p>
+<p>• Protriptyline (Vivactil)</p>
+<p>• Trimipramine (Surmontil)</p>
+<ol start="3">
+<li>Initial treatment is supportive if patient is conscious.</li>
+</ol>
+<h2 id="medic-3">Medic</h2>
+<ol start="4">
+<li>Observe patient for hypotension and a monitor cardiac rhythm for symptomatic bradycardia or tachycardia with a prolongation of the QRS complex.</li>
+</ol>
+<p>a. If patient has prolonged QRS, is hypotensive, or has Ventricular Tachycardia administer Sodium Bicarbonate 1 mEq/kg, slow IV/IO over 2 minutes.</p>
+<p>b. Repeat Sodium Bicarbonate 0.5 mEq/kg, IV/IO for persistent QRS prolongation.</p>
+<ol start="5">
+<li>Consider push dose epi per SB205 Hypotension titrated to maintain systolic blood pressure greater than 100 mmHg for hypotension unresponsive to fluids or sodium bicarbonate.</li>
+</ol>
+<h2 id="all-4">ALL</h2>
+<p><strong>NOTES:</strong></p>
+<ol>
+<li>
+<p>There is a difference between <strong>Cyanokit®</strong> (a B12 vitamin derivative) and <strong>Nithiodote®</strong> (Sodium Nitrate and Sodium Thiosulfate). The sodium nitrate in Nithiodote® is contraindicated for use in patients with smoke inhalation and CO poisoning.</p>
+</li>
+<li>
+<p>For more information on Cyanokit® refer to <a href="http://www.cyanokit.com">www.cyanokit.com</a></p>
+</li>
+<li>
+<p>Evzio (naloxone) is an auto-injector for treating suspected opioid overdose, (analogous to an EpiPen). Evzio comes in a kit with two auto-injectors and a “trainer” device that also has voice guidance. As of 2019, the AWP for Evzio is $2250 for 0.4 mg in 0.4 mL and $2460 for 2 mg in 0.4 mL. The standard 2 mg / 2 mL injectable dose of naloxone, which can be given intranasally, has an AWP of ~$20.</p>
+</li>
+<li>
+<p>For more information on Cyanokit® refer to <a href="http://www.cyanokit.com">www.cyanokit.com</a>.</p>
+</li>
+<li>
+<p>Evzio (naloxone) is an auto-injector for treating suspected opioid overdose, (analogous to an EpiPen). Evzio comes in a kit with two auto-injectors and a “trainer” device that also has voice guidance. As of 2019, the AWP for Evzio is $2250 for 0.4 mg in 0.4 mL and $2460 for 2 mg in 0.4 mL. The standard 2 mg / 2 mL injectable dose of naloxone, which can be given intranasally, has an AWP of ~$20.</p>
+</li>
+</ol>
+<h2 id="medic-4">Medic</h2>
+<p><strong>Cyanokit (Hydroxocobalamin) PEDIATRIC Dosing and Administration</strong></p>
+<ol>
+<li>Reconstitute and mix 5-gram Cyanokit vial with 200mL normal saline as directed on the packaging.</li>
+<li>Connect included tubing to vial.  If needed attach 3-way stop-cock to IV/IO.</li>
+<li>Draw up appropriate volume based on patient age in syringe attached to stop-cock (may require multiple syringes to administer dose)</li>
+<li>Administer dose via IV/IO route over 15 minutes.  <em>(No other medications can be administered through this line.)</em></li>
+</ol>
+<p><strong>Age Based Dosing of Cyanokit</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Age</th>
+<th>Less than 3 years</th>
+<th>3-7 years</th>
+<th>7 years or older</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dose (gram)</td>
+<td>1 gram</td>
+<td>2 grams</td>
+<td>5 grams</td>
+</tr>
+<tr>
+<td>Volume (mL)</td>
+<td>40mL</td>
+<td>80mL</td>
+<td>200mL</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.instant"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
